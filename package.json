@@ -1,0 +1,11 @@
+{
+  "name": "commander-rc-adapter",
+  "version": "0.0.0",
+  "description": "A helper function to use commander style argv in rc configuration.",
+  "main": "lib",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Garth Braithwaite <garthdb@gmail.com> (http://garthdb.com)",
+  "license": "Apache-2.0"
+}
