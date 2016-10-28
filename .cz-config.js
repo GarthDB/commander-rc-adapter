@@ -12,7 +12,7 @@ module.exports = {
     {value: ':white_check_mark: test',    name: 'test:     Adding missing tests'},
     {value: ':cow2: chore',               name: 'chore:    Changes to the build process or auxiliary tools\n            and libraries such as documentation generation'},
     {value: ':bomb: revert',              name: 'revert:   Revert to a commit'},
-    {value: ':checkered_flag: WIP',       name: 'WIP:      Work in progress'},
+    {value: ':construction: WIP',         name: 'WIP:      Work in progress'},
     {value: ':art: design',               name: 'design:   Updates to UI or UX'}
   ],
 
