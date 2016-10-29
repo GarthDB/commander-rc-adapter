@@ -1,6 +1,6 @@
 {
   "name": "commander-rc-adapter",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A helper function to use commander style argv in rc configuration.",
   "main": "lib",
   "scripts": {
