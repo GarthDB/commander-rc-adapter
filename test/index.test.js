@@ -1,15 +1,15 @@
 import test from 'ava';
 import program from 'commander';
-import minimist from 'minimist';
-import adapter, { formatLong, formatShort } from '../src/';
+// import minimist from 'minimist';
+import adapter from '../src/';
 
-function generateExpected(args, prog) {
-  const alias = {};
-  prog.options.forEach((opt) => {
-    alias[formatLong(opt.long)] = formatShort(opt.short);
-  });
-  return minimist(args.splice(2), { alias });
-}
+// function generateExpected(args, prog) {
+//   const alias = {};
+//   prog.options.forEach((opt) => {
+//     alias[formatLong(opt.long)] = formatShort(opt.short);
+//   });
+//   return minimist(args.splice(2), { alias });
+// }
 
 test('should accept commander options', (t) => {
   const args = ['node', 'test', '.eslintrc', '--foo-doo', '-b', 'baz'];
@@ -19,6 +19,6 @@ test('should accept commander options', (t) => {
     .option('-b, --bar <string>', 'add some bar');
   program.parse(args);
   const result = adapter(program);
-  const expected = generateExpected(args, program);
+  const expected = { _: ['.eslintrc'], fooDoo: true, bar: 'baz' };
   t.deepEqual(result, expected);
 });

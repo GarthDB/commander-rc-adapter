@@ -18,23 +18,6 @@ export function formatLong(val) {
 }
 
 /**
- *  Public: formats the short name of an option.
- *
- *  * `val` {String} the option's short name.
- *
- *  ## Examples
- *
- *  ```js
- *  formatShort('-f'); // returns 'f'
- *  ```
- *
- *  Returns formatted {String} of the short name.
- */
-export function formatShort(val) {
-  return val.replace('-', '');
-}
-
-/**
  *  Public: converts hyphenated strings to camelcase.
  *
  *  * `val` hyphenated {String}
@@ -80,12 +63,9 @@ export function camelcase(val) {
 export default function adapter(program) {
   const result = { _: program.args };
   program.options.forEach((option) => {
-    const name = formatLong(option.long);
-    const camelName = camelcase(name);
-    const short = formatShort(option.short);
+    const camelName = camelcase(formatLong(option.long));
     if ({}.hasOwnProperty.call(program, camelName)) {
-      result[name] = program[camelName];
-      result[short] = program[camelName];
+      result[camelName] = program[camelName];
     }
   });
   return result;
